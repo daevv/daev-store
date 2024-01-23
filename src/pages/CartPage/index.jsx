@@ -1,18 +1,23 @@
-import { addToCart, decrease, increase, removeFromCart } from "../../store/productsReducer";
+import {
+  addToCart,
+  decrease,
+  increase,
+  removeFromCart,
+} from "../../store/productsReducer";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const GoodItem = ({ title, price, count, image, id }) => {
   const dispatch = useDispatch();
   const generateRemoveHandler = (id, count, price) => () => {
-    dispatch(removeFromCart({id, count, price}));
-  }
+    dispatch(removeFromCart({ id, count, price }));
+  };
   const generateIncreaseHandler = (id, price) => () => {
-    dispatch(addToCart({id, price}));
-  }
+    dispatch(addToCart({ id, price }));
+  };
   const generateDecreaseHandler = (id, price) => () => {
-    dispatch(decrease({id, price}));
-  }
+    dispatch(decrease({ id, price }));
+  };
   return (
     <div className="good">
       <div className="good__pic" style={{ backgroundImage: `url(${image})` }} />
@@ -20,12 +25,21 @@ const GoodItem = ({ title, price, count, image, id }) => {
         <p className="good__name">{title}</p>
         <p className="good__price">$ {price}</p>
         <div className="quantity-block">
-          <button className="quantity-block__decrease" onClick={generateDecreaseHandler(id, price)}></button>
+          <button
+            className="quantity-block__decrease"
+            onClick={generateDecreaseHandler(id, price)}
+          ></button>
           <p className="quantity-block__value">{count}</p>
-          <button className="quantity-block__increase" onClick={generateIncreaseHandler(id, price)}></button>
+          <button
+            className="quantity-block__increase"
+            onClick={generateIncreaseHandler(id, price)}
+          ></button>
         </div>
       </div>
-      <button className="good__delete-btn" onClick={generateRemoveHandler(id, count, price)}></button>
+      <button
+        className="good__delete-btn"
+        onClick={generateRemoveHandler(id, count, price)}
+      ></button>
       <p className="good__total-price">$ {count * price}</p>
     </div>
   );
@@ -66,7 +80,13 @@ const CartPage = () => {
           </div>
           <div className="purchase-block">
             <p className="purchase-block__price">TOTAL: $ {totalSum}</p>
-            <button className="purchase-block__btn button">Purchase</button>
+            <a
+              href="https://daevv.github.io/tonight-vibes/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button className="purchase-block__btn button">Purchase</button>
+            </a>
           </div>
         </div>
       </div>
