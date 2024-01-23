@@ -6,6 +6,7 @@ const MainPage = () => {
     const navigate = useNavigate(null);
     const handleClick = () => {
         navigate('/products');
+        window.scrollTo(0,0);
     }
   return (
     <div className="main-page-bg">

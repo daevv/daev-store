@@ -1,0 +1,49 @@
+.content-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 250px;
+}
+
+.links-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+    width: 50%;
+}
+
+.git-logo, .tg-logo {
+    height: 80px;
+    width: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.git-logo {
+    background-image: url('../../../Assets/git-logo.svg');
+}
+.tg-logo {
+    background-image: url('../../../Assets/tg-logo.svg');
+}
+
+.main-text {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.sub-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .content-block {
+        margin-top: 70px;
+    }
+}

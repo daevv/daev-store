@@ -3,7 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  min-height: 85vh;
 }
 
 .main-page-content {
@@ -65,4 +65,42 @@
 
 .button:hover {
   background-color: rgb(136, 88, 112);
+}
+
+@media (max-width: 720px) {
+  .main-page-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+  .text-container {
+    align-items: center;
+  }
+  .pic-container {
+    height: 300px;
+    width: 70%;
+  }
+  .main-page-content {
+    padding: 50px 0;
+  }
+  .text-container__title {
+    text-align: center;
+    font-size: 46px;
+  }
+  .main-page-bg {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 420px) {
+  .text-container__title {
+    font-size: 28px;
+  }
+  .pic-container {
+    height: 300px;
+    width: 100%;
+  }
+  .main-page-content {
+    padding: 20px 0;
+  }
 }

@@ -1,0 +1,135 @@
+.flex-container {
+  display: flex;
+  column-gap: 2rem !important;
+  align-items: start !important;
+}
+
+.flex-container > div {
+  flex: 1 1 0px;
+}
+
+.goods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.good {
+  display: flex;
+  position: relative;
+  gap: 2rem;
+  border-radius: 20px;
+  background-color: rgb(255, 253, 255);
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
+  padding: 15px;
+}
+
+.good__pic {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: antiquewhite;
+  height: 200px;
+  width: 250px;
+}
+
+.good__info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+}
+.good__name {
+  font-weight: bold;
+  font-size: 20px;
+  max-width: 80%;
+  text-align: left;
+}
+
+.good__price {
+  font-size: 18px;
+}
+
+.quantity-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.quantity-block__decrease,
+.quantity-block__increase {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+}
+
+.quantity-block__decrease {
+  background-image: url("../../../Assets/minus-logo.svg");
+}
+.quantity-block__increase {
+  background-image: url("../../../Assets/plus-logo.svg");
+}
+
+.good__delete-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-image: url("../../../Assets/cancel-logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 25px;
+  width: 25px;
+  background-size: contain;
+}
+
+.good__total-price {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.purchase-block {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.purchase-block__price {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 15px;
+}
+
+.purchase-block__btn {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center !important;
+    row-gap: 2rem;
+  }
+}
+@media (max-width: 550px) {
+  .good {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+  }
+  .good__info-block {
+    align-items: center;
+  }
+  .good__name {
+    text-align: center;
+  }
+  .good__delete-btn {
+    right: 8px;
+    top: 8px;
+  }
+}
